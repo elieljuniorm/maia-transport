@@ -10,16 +10,16 @@ function Calculadora() {
         let pes = Number(document.getElementById("pesobruto").value)
         let cub = Number(document.getElementById("cubagem").value)
         let fat = Number(document.getElementById("fator").value)
-        let volume = Number(document.getElementById("volume").value)
+        let vol = Number(document.getElementById("volume").value)
         let alt = Number(document.getElementById("altura").value)
         let com = Number(document.getElementById("comprimento").value)
         let lag = Number(document.getElementById("largura").value)
         let res = document.getElementById('resultado')
-        let dim = (alt*com*lag*volume)*fat
+        let dim = (alt*com*lag*vol)*fat
         let cubft = cub*fat
-        const seguro = 0.007
+        const seguro = 0.01
         const icms = 0.93
-        const taxa = 65.00
+        const taxa = 70.00
     
         if(val <= 0 || pes <= 0){
             alert('VALOR DE NF-e OU PESO INVALIDOS, TENTE NOVAMENTE')
@@ -110,7 +110,7 @@ function Calculadora() {
 
                         <span>
                             <label className={styles.tituloMedidas}>Volume</label>
-                            <input type="number"  id="volume" placeholder="Nº Vol." className={styles.medidas} />
+                            <input type="number"  id="vol" placeholder="Nº Vol." className={styles.medidas} />
                         </span>
 
                     </div>
