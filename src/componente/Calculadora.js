@@ -6,11 +6,10 @@ function Calculadora() {
     return (
 
         <div className={styles.pagina}>
+
             <main>
 
-                <h1>Cotação de frete</h1>
-
-                <p>Digite abaixo os valores solicitados:</p>
+                <h1>Informe os dados da Mercadoria</h1>
 
                 <form Name={styles.formulario}>
 
@@ -38,32 +37,44 @@ function Calculadora() {
 
                     <input type="number" name="fator" id="fator" placeholder="000 m³" className={styles.entradaDados} />
 
-                    <label for="altura-largura-comprimento">Altura x Comprimento x Largura x Volume</label>
 
-                    <table id="tabela-medida">
+                    <table className={styles.tabela}>
 
-                        <tr>
-                            <td><input type="number" name="altura" id="altura" placeholder="0.00 m" /></td>
-                            <td><input type="number" name="comprimento" id="comprimento" placeholder="0.00 m" /></td>
-                            <td><input type="number" name="largura" id="largura" placeholder="0.00 m" /></td>
-                            <td><input type="number" name="volume" id="volume" placeholder="Nº Vol." /></td>
-                        </tr>
+                        <span>
+                            <label for="altura" className={styles.tituloMedidas}>Altura</label>
+                            <input type="number" name="altura" id="altura" placeholder="0.00 m" className={styles.medidas} />
+                        </span>
+
+                        <span>
+                            <label for="altura" className={styles.tituloMedidas}>Largura</label>
+                            <input type="number" name="comprimento" id="comprimento" placeholder="0.00 m" className={styles.medidas} />
+                        </span>
+
+                        <span>
+                            <label for="altura" className={styles.tituloMedidas}>Comprimento</label>
+                            <input type="number" name="largura" id="largura" placeholder="0.00 m" className={styles.medidas} />
+                        </span>
+
+                        <span>
+                            <label for="altura" className={styles.tituloMedidas}>Volume</label>
+                            <input type="number" name="volume" id="volume" placeholder="Nº Vol." className={styles.medidas} />
+                        </span>
 
                     </table>
 
-                    <div class="botoes">
+                    {/* <div className={styles.botoes}>
                         <input type="button" value="Adicionar" onclick="adicionar()" className={styles.botaoDimensao} />
                         <input type="button" value="Remover" onclick="remover()" className={styles.botaoDimensao} />
-                    </div>
+                    </div> */}
 
                 </form>
 
 
-                <div id="resultado">
-                    <p>Os valores serão exibidos com base nas informações fornecidas acima.</p>
+                <div id="resultado" className={styles.resultado}>
+                    <p>O preenchimento incorreto dos dados poderá gerar cobranças extras ou incorretas.</p>
                 </div>
 
-                <div class="botoes">
+                <div className={styles.botoes}>
                     <input type="button" value="Calcular" onclick="calcular()" className={styles.botaoCalcular} />
                 </div>
             </main>
