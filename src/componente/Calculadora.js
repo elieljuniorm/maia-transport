@@ -34,17 +34,15 @@ function Calculadora() {
 
             else {
                 console.log({ cubft, dim, pes })
-                if (cubft > pes && cubft < dim && pes !== 0 && val !== 0) {
-                    let fretedim = ((val * seguro) + taxa + (dim * tab) / icms)
+                if (cubft > pes && dim > cubft && pes !== 0 && val !== 0) {
+                    let fretedim = ((val * seguro) + taxa + (dim * tab)) / icms
                     res.innerHTML = `Seu frete fica no valor de R$ ${fretedim.toFixed(2)}`
-
                 }
                 else {
-                    console.log({ cubft, pes, dim })
+                    console.log({ cubft, dim, pes })
                     if (cubft < pes && dim < pes && pes !== 0 && val !== 0) {
-                        let fretepeso = ((val * seguro) + taxa + (pes * tab) / icms)
+                        let fretepeso = ((val * seguro) + taxa + (pes * tab)) / icms
                         res.innerHTML = `Seu frete fica no valor de R$ ${fretepeso.toFixed(2)}`
-
                     }
                 }
             }
