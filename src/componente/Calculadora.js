@@ -64,7 +64,7 @@ function Calculadora() {
 
             <main>
 
-                <h1>Informe os dados da Mercadoria</h1>
+                <h1>Informe os dados da mercadoria</h1>
 
                 <form className={styles.formulario}>
 
@@ -80,11 +80,11 @@ function Calculadora() {
 
                     <input type="number" id="pesobruto" placeholder="Peso bruto" required className={styles.entradaDados} />
 
-                    <label>Cubagem:</label>
+                    <label>Metro cúbico:</label>
 
                     <input type="number" id="cubagem" placeholder="Metro cúbico" className={styles.entradaDados} />
 
-                    <label>Fator de Cubagem:</label>
+                    <label>Fator de cubagem:</label>
 
                     <input type="number" id="fator" placeholder="000 m³" className={styles.entradaDados} />
 
