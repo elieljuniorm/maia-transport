@@ -10,12 +10,12 @@ function Calculadora() {
         let pes = Number(document.getElementById("pesobruto").value)
         let cub = Number(document.getElementById("cubagem").value)
         let fat = Number(document.getElementById("fator").value)
-        let vol = Number(document.getElementById("vol").value)
+        let qua = Number(document.getElementById("quantidade").value)
         let alt = Number(document.getElementById("altura").value)
         let com = Number(document.getElementById("comprimento").value)
         let lag = Number(document.getElementById("largura").value)
         let res = document.getElementById('resultado')
-        let dim = (alt * com * lag * vol) * fat
+        let dim = (alt * com * lag * qua) * fat
         let cubft = cub * fat
         const tab = 0.99
         const seguro = 0.01
@@ -106,11 +106,6 @@ function Calculadora() {
                             <input type="number" id="largura" placeholder="0.00 m" className={styles.medidas} />
                         </span>
 
-                        <span>
-                            <label className={styles.tituloMedidas}>Volume</label>
-                            <input type="number" id="vol" placeholder="Nº Vol." className={styles.medidas} />
-                        </span>
-
                     </div>
 
                     {/* <div className={styles.botoes}>
@@ -126,7 +121,7 @@ function Calculadora() {
                 </div>
 
                 <div className={styles.botoes}>
-                    <button type='button' title='Calcular' className={styles.botaoCalcular} onClick={calcular}>COTAR</button>
+                    <button type='button' title='Calcular' className={styles.botaoCalcular} onClick={calcular}>CALCULAR</button>
                 </div>
             </main>
         </div>
