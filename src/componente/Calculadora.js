@@ -5,6 +5,8 @@ import styles from './Calculadora.module.css'
 function Calculadora() {
 
     function calcular() {
+        
+        let resultado = ''
 
         let val = Number(document.getElementById("valornf").value)
         let pes = Number(document.getElementById("pesobruto").value)
@@ -21,44 +23,44 @@ function Calculadora() {
         const seguro = 0.01
         const icms = 0.93
         const taxa = 70.00
-        
+
         console.log({ cubft, dim, pes })
 
         if (val <= 0 || pes <= 0) {
+
             alert('VALOR DE NF-e OU PESO INVALIDOS, TENTE NOVAMENTE.')
+
         } else {
-            
+
             console.log(cubft > pes && cubft > dim && pes !== 0 && val !== 0)
             if (cubft > pes && cubft > dim && pes !== 0 && val !== 0) {
-            
                 let fretecb = ((val * seguro) + taxa + (cubft * tab)) / icms
-                res.innerHTML = `Seu frete por m³ fica no valor de R$ ${fretecb.toFixed(2)}`
-            
-            } else {
-                console.log(cubft > pes && dim > cubft && pes !== 0 && val !== 0)
-                if (cubft > pes && dim > cubft && pes !== 0 && val !== 0) {
-                    
-                    let fretedim = ((val * seguro) + taxa + (dim * tab)) / icms
-                    res.innerHTML = `Seu frete por dimensão fica no valor de R$ ${fretedim.toFixed(2)}`
-                
-                } else {
-                    console.log(cubft < pes && dim < pes && pes !== 0 && val !== 0)
-                    if ((cubft < pes && dim < pes && pes !== 0 && val !== 0) || (pes > cubft && pes > dim)) {
-                        
-                        let fretepeso = ((val * seguro) + taxa + (pes * tab)) / icms
-                        res.innerHTML = `Seu frete por peso fica no valor de R$ ${fretepeso.toFixed(2)}`
-                    
-                    }
-                }
+                resultado = `Seu frete por m³ fica no valor de R$ ${fretecb.toFixed(2)}`
             }
-        }
-        if (val <= 1000 && pes <= 100 && pes > 50 && pes !== 0 && val !== 0) {
-            res.innerHTML = `Seu frete fica no valor de R$ 150,00`
-        } else {
+
+            console.log(cubft > pes && dim > cubft && pes !== 0 && val !== 0)
+            if (cubft > pes && dim > cubft && pes !== 0 && val !== 0) {
+                let fretedim = ((val * seguro) + taxa + (dim * tab)) / icms
+                resultado = `Seu frete por dimensão fica no valor de R$ ${fretedim.toFixed(2)}`
+            }
+
+            console.log(cubft < pes && dim < pes && pes !== 0 && val !== 0)
+            if (cubft < pes && dim < pes && pes !== 0 && val !== 0) {
+                let fretepeso = ((val * seguro) + taxa + (pes * tab)) / icms
+                resultado = `Seu frete por peso fica no valor de R$ ${fretepeso.toFixed(2)}`
+            }
+
+            if (val <= 1000 && pes <= 100 && pes > 50 && pes !== 0 && val !== 0) {
+                resultado = `Seu frete fica no valor de R$ 150,00`
+            }
+
             if (val <= 1000 && pes <= 50 && pes !== 0 && val !== 0) {
-                res.innerHTML = `Seu frete fica no valor de R$ 125,00`
+                resultado = `Seu frete fica no valor de R$ 125,00`
             }
+
+            res.innerHTML = resultado
         }
+
     }
 
     return (
