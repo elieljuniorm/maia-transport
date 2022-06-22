@@ -6,7 +6,7 @@ function Calculadora() {
 
     function calcular() {
         
-        let resultado = ''
+        let resultado = 'O preenchimento incorreto dos dados poderá gerar cobranças extras ou incorretas.'
 
         let val = Number(document.getElementById("valornf").value)
         let pes = Number(document.getElementById("pesobruto").value)
