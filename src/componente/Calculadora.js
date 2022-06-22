@@ -42,8 +42,8 @@ function Calculadora() {
                     res.innerHTML = `Seu frete por medidas fica no valor de R$ ${fretedim.toFixed(2)}`
                 
                 } else {
-                    console.log(cubft < pes && dim < pes && pes !== 0 && val !== 0)
-                    if (cubft < pes && dim < pes && pes !== 0 && val !== 0) {
+                    console.log(cubft < pes && dim > pes && pes !== 0 && val !== 0)
+                    if (cubft < pes && dim > pes && pes !== 0 && val !== 0) {
                         
                         let fretepeso = ((val * seguro) + taxa + (pes * tab)) / icms
                         res.innerHTML = `Seu frete por peso fica no valor de R$ ${fretepeso.toFixed(2)}`
