@@ -33,22 +33,34 @@ function Calculadora() {
         } else {
 
             console.log(cubft > pes && cubft > dim && pes !== 0 && val !== 0)
-            if (cubft > pes && cubft > dim && pes !== 0 && val !== 0) {
+            //if (cubft > pes && cubft > dim && pes !== 0 && val !== 0) {
                 let fretecb = ((val * seguro) + taxa + (cubft * tab)) / icms
-                resultado = `Seu frete por m³ fica no valor de R$ ${fretecb.toFixed(2)}`
-            }
+                //resultado = `Seu frete por m³ fica no valor de R$ ${fretecb.toFixed(2)}`
+            //}
 
             console.log(cubft > pes && dim > cubft && pes !== 0 && val !== 0)
-            if (cubft > pes && dim > cubft && pes !== 0 && val !== 0) {
+            //if (cubft > pes && dim > cubft && pes !== 0 && val !== 0) {
                 let fretedim = ((val * seguro) + taxa + (dim * tab)) / icms
-                resultado = `Seu frete por dimensão fica no valor de R$ ${fretedim.toFixed(2)}`
-            }
+                //resultado = `Seu frete por dimensão fica no valor de R$ ${fretedim.toFixed(2)}`
+            //}
 
             console.log(cubft < pes && dim < pes && pes !== 0 && val !== 0)
-            if (cubft < pes && dim < pes && pes !== 0 && val !== 0) {
+            //if (cubft < pes && dim < pes && pes !== 0 && val !== 0) {
                 let fretepeso = ((val * seguro) + taxa + (pes * tab)) / icms
-                resultado = `Seu frete por peso fica no valor de R$ ${fretepeso.toFixed(2)}`
-            }
+                //resultado = `Seu frete por peso fica no valor de R$ ${fretepeso.toFixed(2)}`
+            //}
+                
+            console.log('fretecb: ${fretecb.toFixed(2)}')
+            console.log('fretedim: ${fretedim.toFixed(2)}')
+            console.log('fretepeso: ${fretepeso.toFixed(2)}')
+            
+            let fretes = [fretecb,fretedim,fretepeso]
+            
+            let maiorFrete = fretes.reduce(function(prev, current) { 
+	            return prev > current ? prev : current; 
+            })]
+            
+            resultado = `Seu frete fica no valor de R$ ${maiorFrete.toFixed(2)}`
 
             if (val <= 1000 && pes <= 100 && pes > 50 && pes !== 0 && val !== 0) {
                 resultado = `Seu frete fica no valor de R$ 150,00`
