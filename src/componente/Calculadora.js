@@ -21,27 +21,33 @@ function Calculadora() {
         const seguro = 0.01
         const icms = 0.93
         const taxa = 70.00
+        
+        console.log({ cubft, dim, pes })
 
         if (val <= 0 || pes <= 0) {
             alert('VALOR DE NF-e OU PESO INVALIDOS, TENTE NOVAMENTE.')
         } else {
-            console.log({ cubft, dim, pes })
+            
+            console.log(cubft > pes && cubft > dim && pes !== 0 && val !== 0)
             if (cubft > pes && cubft > dim && pes !== 0 && val !== 0) {
+            
                 let fretecb = ((val * seguro) + taxa + (cubft * tab)) / icms
                 res.innerHTML = `Seu frete por m³ fica no valor de R$ ${fretecb.toFixed(2)}`
-            }
-
-            else {
-                console.log({ cubft, dim, pes })
+            
+            } else {
+                console.log(cubft > pes && dim > cubft && pes !== 0 && val !== 0)
                 if (cubft > pes && dim > cubft && pes !== 0 && val !== 0) {
+                    
                     let fretedim = ((val * seguro) + taxa + (dim * tab)) / icms
                     res.innerHTML = `Seu frete por medidas fica no valor de R$ ${fretedim.toFixed(2)}`
-                }
-                else {
-                    console.log({ cubft, dim, pes })
+                
+                } else {
+                    console.log(cubft < pes && dim < pes && pes !== 0 && val !== 0)
                     if (cubft < pes && dim < pes && pes !== 0 && val !== 0) {
+                        
                         let fretepeso = ((val * seguro) + taxa + (pes * tab)) / icms
                         res.innerHTML = `Seu frete por peso fica no valor de R$ ${fretepeso.toFixed(2)}`
+                    
                     }
                 }
             }
