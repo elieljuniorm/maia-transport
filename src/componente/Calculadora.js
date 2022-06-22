@@ -50,15 +50,17 @@ function Calculadora() {
                 //resultado = `Seu frete por peso fica no valor de R$ ${fretepeso.toFixed(2)}`
             //}
                 
-            console.log('fretecb: ${fretecb.toFixed(2)}')
-            console.log('fretedim: ${fretedim.toFixed(2)}')
-            console.log('fretepeso: ${fretepeso.toFixed(2)}')
+            console.log('fretecb: ' + fretecb)
+            console.log('fretedim: ' + fretedim)
+            console.log('fretepeso: ' + fretepeso)
             
             let fretes = [fretecb,fretedim,fretepeso]
             
             let maiorFrete = fretes.reduce(function(prev, current) { 
 	            return prev > current ? prev : current; 
             })
+	    
+	    console.log('maiorFrete: ' + maiorFrete)
             
             resultado = `Seu frete fica no valor de R$ ${maiorFrete.toFixed(2)}`
 
