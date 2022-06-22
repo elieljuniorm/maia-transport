@@ -39,11 +39,11 @@ function Calculadora() {
                 if (cubft > pes && dim > cubft && pes !== 0 && val !== 0) {
                     
                     let fretedim = ((val * seguro) + taxa + (dim * tab)) / icms
-                    res.innerHTML = `Seu frete por medidas fica no valor de R$ ${fretedim.toFixed(2)}`
+                    res.innerHTML = `Seu frete por dimensão fica no valor de R$ ${fretedim.toFixed(2)}`
                 
                 } else {
-                    console.log(cubft < pes && dim > pes && pes !== 0 && val !== 0)
-                    if (cubft < pes && dim > pes && pes !== 0 && val !== 0) {
+                    console.log(cubft < pes && dim < pes && pes !== 0 && val !== 0)
+                    if ((cubft < pes && dim < pes && pes !== 0 && val !== 0) || (pes > cubft && pes > dim)) {
                         
                         let fretepeso = ((val * seguro) + taxa + (pes * tab)) / icms
                         res.innerHTML = `Seu frete por peso fica no valor de R$ ${fretepeso.toFixed(2)}`
