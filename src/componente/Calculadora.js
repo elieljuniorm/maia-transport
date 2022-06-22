@@ -58,7 +58,7 @@ function Calculadora() {
             
             let maiorFrete = fretes.reduce(function(prev, current) { 
 	            return prev > current ? prev : current; 
-            })]
+            })
             
             resultado = `Seu frete fica no valor de R$ ${maiorFrete.toFixed(2)}`
 
