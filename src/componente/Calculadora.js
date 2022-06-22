@@ -25,7 +25,7 @@ function Calculadora() {
         if (val <= 0 || pes <= 0) {
             alert('VALOR DE NF-e OU PESO INVALIDOS, TENTE NOVAMENTE.')
         } else {
-
+            console.log('Calculo por m3: ')
             console.log({ cubft, dim, pes })
             if (cubft > pes && cubft > dim && pes !== 0 && val !== 0) {
                 let fretecb = ((val * seguro) + taxa + (cubft * tab)) / icms
@@ -33,12 +33,14 @@ function Calculadora() {
             }
 
             else {
+                console.log('Calculo por medidas: ')
                 console.log({ cubft, dim, pes })
                 if (cubft > pes && dim > cubft && pes !== 0 && val !== 0) {
                     let fretedim = ((val * seguro) + taxa + (dim * tab)) / icms
                     res.innerHTML = `Seu frete fica no valor de R$ ${fretedim.toFixed(2)}`
                 }
                 else {
+                    console.log('Calculo por peso: ')
                     console.log({ cubft, dim, pes })
                     if (cubft < pes && dim < pes && pes !== 0 && val !== 0) {
                         let fretepeso = ((val * seguro) + taxa + (pes * tab)) / icms
