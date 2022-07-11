@@ -5,7 +5,7 @@ import styles from './Calculadora.module.css'
 function Calculadora() {
 
     function calcular() {
-        
+
         let resultado = 'O preenchimento incorreto dos dados poderá gerar cobranças extras ou incorretas.'
 
         let val = Number(document.getElementById("valornf").value)
@@ -34,34 +34,34 @@ function Calculadora() {
 
             console.log(cubft > pes && cubft > dim && pes !== 0 && val !== 0)
             //if (cubft > pes && cubft > dim && pes !== 0 && val !== 0) {
-                let fretecb = ((val * seguro) + taxa + (cubft * tab)) / icms
-                //resultado = `Seu frete por m³ fica no valor de R$ ${fretecb.toFixed(2)}`
+            let fretecb = ((val * seguro) + taxa + (cubft * tab)) / icms
+            //resultado = `Seu frete por m³ fica no valor de R$ ${fretecb.toFixed(2)}`
             //}
 
             console.log(cubft > pes && dim > cubft && pes !== 0 && val !== 0)
             //if (cubft > pes && dim > cubft && pes !== 0 && val !== 0) {
-                let fretedim = ((val * seguro) + taxa + (dim * tab)) / icms
-                //resultado = `Seu frete por dimensão fica no valor de R$ ${fretedim.toFixed(2)}`
+            let fretedim = ((val * seguro) + taxa + (dim * tab)) / icms
+            //resultado = `Seu frete por dimensão fica no valor de R$ ${fretedim.toFixed(2)}`
             //}
 
             console.log(cubft < pes && dim < pes && pes !== 0 && val !== 0)
             //if (cubft < pes && dim < pes && pes !== 0 && val !== 0) {
-                let fretepeso = ((val * seguro) + taxa + (pes * tab)) / icms
-                //resultado = `Seu frete por peso fica no valor de R$ ${fretepeso.toFixed(2)}`
+            let fretepeso = ((val * seguro) + taxa + (pes * tab)) / icms
+            //resultado = `Seu frete por peso fica no valor de R$ ${fretepeso.toFixed(2)}`
             //}
-                
+
             console.log('fretecb: ' + fretecb)
             console.log('fretedim: ' + fretedim)
             console.log('fretepeso: ' + fretepeso)
-            
-            let fretes = [fretecb,fretedim,fretepeso]
-            
-            let maiorFrete = fretes.reduce(function(prev, current) { 
-	            return prev > current ? prev : current; 
+
+            let fretes = [fretecb, fretedim, fretepeso]
+
+            let maiorFrete = fretes.reduce(function (prev, current) {
+                return prev > current ? prev : current;
             })
-	    
-	    console.log('maiorFrete: ' + maiorFrete)
-            
+
+            console.log('maiorFrete: ' + maiorFrete)
+
             resultado = `Seu frete fica no valor de R$ ${maiorFrete.toFixed(2)}`
 
             if (val <= 1000 && pes <= 100 && pes > 50 && pes !== 0 && val !== 0) {
@@ -127,13 +127,7 @@ function Calculadora() {
 
                     </div>
 
-                    {/* <div className={styles.botoes}>
-                        <input type="button" value="Adicionar" onclick="adicionar()" className={styles.botaoDimensao} />
-                        <input type="button" value="Remover" onclick="remover()" className={styles.botaoDimensao} />
-                    </div> */}
-
                 </form>
-
 
                 <div id="resultado" className={styles.resultado}>
                     <p>O preenchimento incorreto dos dados poderá gerar cobranças extras ou incorretas.</p>
