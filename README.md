@@ -1,6 +1,6 @@
 # Calculadora de Frete Transporte Rodoviário 
 
-Calculadora de frete da empresa Jurua Logística e Transportes LTDA. Construído em React.Js
+Calculadora de frete da empresa fictícia Maia Transport. Construído em React.Js
 
 ## Recursos Utilizados 🚀
 
