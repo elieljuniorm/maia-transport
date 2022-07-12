@@ -8,10 +8,14 @@ function Calculadora() {
 
         let resultado = 'O preenchimento incorreto dos dados poderá gerar cobranças extras ou incorretas.'
 
+        const tab = 0.99
+        const seguro = 0.01
+        const icms = 0.93
+        const taxa = 70.00
+        const fat = 300
         let val = Number(document.getElementById("valornf").value)
         let pes = Number(document.getElementById("pesobruto").value)
         let cub = Number(document.getElementById("cubagem").value)
-        let fat = Number(document.getElementById("fator").value)
         let qua = Number(document.getElementById("quantidade").value)
         let alt = Number(document.getElementById("altura").value)
         let com = Number(document.getElementById("comprimento").value)
@@ -19,10 +23,6 @@ function Calculadora() {
         let res = document.getElementById('resultado')
         let dim = (alt * com * lag * qua) * fat
         let cubft = cub * fat
-        const tab = 0.99
-        const seguro = 0.01
-        const icms = 0.93
-        const taxa = 70.00
 
         console.log({ cubft, dim, pes })
 
@@ -33,22 +33,16 @@ function Calculadora() {
         } else {
 
             console.log(cubft > pes && cubft > dim && pes !== 0 && val !== 0)
-            //if (cubft > pes && cubft > dim && pes !== 0 && val !== 0) {
+
             let fretecb = ((val * seguro) + taxa + (cubft * tab)) / icms
-            //resultado = `Seu frete por m³ fica no valor de R$ ${fretecb.toFixed(2)}`
-            //}
 
             console.log(cubft > pes && dim > cubft && pes !== 0 && val !== 0)
-            //if (cubft > pes && dim > cubft && pes !== 0 && val !== 0) {
+
             let fretedim = ((val * seguro) + taxa + (dim * tab)) / icms
-            //resultado = `Seu frete por dimensão fica no valor de R$ ${fretedim.toFixed(2)}`
-            //}
 
             console.log(cubft < pes && dim < pes && pes !== 0 && val !== 0)
-            //if (cubft < pes && dim < pes && pes !== 0 && val !== 0) {
+
             let fretepeso = ((val * seguro) + taxa + (pes * tab)) / icms
-            //resultado = `Seu frete por peso fica no valor de R$ ${fretepeso.toFixed(2)}`
-            //}
 
             console.log('fretecb: ' + fretecb)
             console.log('fretedim: ' + fretedim)
@@ -102,11 +96,6 @@ function Calculadora() {
                     <label>Metro cúbico:</label>
 
                     <input type="number" id="cubagem" placeholder="Metro cúbico" className={styles.entradaDados} />
-
-                    <label>Fator de cubagem:</label>
-
-                    <input type="number" id="fator" placeholder="000 m³" className={styles.entradaDados} />
-
 
                     <div className={styles.tabela}>
 
