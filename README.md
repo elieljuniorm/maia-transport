@@ -2,6 +2,8 @@
 
 Calculadora de frete da empresa fictícia Maia Transport. Construído em React.Js
 
+![Captura de tela 2022-07-12 102638](https://user-images.githubusercontent.com/79880373/178501899-1c740fea-c87f-4ee4-a643-964aa84f6f29.png)
+
 ## Recursos Utilizados 🚀
 
 * **[Node.js](https://nodejs.org/en/)**
