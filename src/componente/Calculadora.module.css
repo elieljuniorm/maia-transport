@@ -1,11 +1,11 @@
-html{
+html {
   background-color: rgb(255, 255, 255);
 }
 h1 {
   font-size: 1.2em;
   text-align: center;
   margin: 0.5em 0 0.5em 0;
-  color: #303F4D;
+  color: #303f4d;
 }
 label {
   display: block;
@@ -25,7 +25,7 @@ form {
 }
 input {
   width: 40%;
-  padding: 0.7em .9em;
+  padding: 0.7em 0.9em;
   border: 1px solid rgb(213, 214, 219);
   border-radius: 5px;
   text-align: center;
@@ -43,9 +43,9 @@ input::placeholder {
 }
 .medidas {
   display: flex;
-  margin: .5em;
+  margin: 0.5em;
   width: 40%;
-  padding: .8em 2em;
+  padding: 0.8em 2em;
 }
 .tituloMedidas {
   margin: 0.5em;
@@ -61,7 +61,7 @@ input::placeholder {
   border: none;
   background: rgb(47, 37, 189);
   border-radius: 5px;
-  padding: .6em 7em;
+  padding: 0.6em 7em;
   color: white;
 }
 .botaoCalcular:hover {
@@ -72,4 +72,12 @@ input::placeholder {
   padding-bottom: 1em;
   font-size: 1.1em;
   text-align: center;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 2560px) /* Tablet/Ipad Pro/Desktop */ {
+  main {
+    padding: 1.5em 2em;
+    width: 50%;
+    margin: auto;
+  }
 }
