@@ -1,0 +1,28 @@
+footer {
+  bottom: 0;
+  position: relative;
+  text-align: center;
+  padding-top: 1em;
+}
+.copyrigth {
+  color: black;
+  text-align: center;
+  font-family: var(--fonte-padrao);
+  font-weight: 600;
+  font-style: italic;
+}
+.design {
+  color: black;
+  text-align: center;
+  font-family: var(--fonte-padrao);
+  font-weight: 600;
+  font-style: italic;
+}
+@media only screen and (min-width: 700px) and (max-width: 2560px) /* Tablet/Ipad/Desktop */ {
+  .copyrigth {
+    font-size: 1em;
+  }
+  .design {
+    font-size: 1em;
+  }
+}
