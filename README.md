@@ -44,4 +44,4 @@ Bom, agora na mesma tela do cmd, basta iniciar o server para o projeto ser execu
 ```
 ## Aplicação (Online) ⭐️
 
-Caso desejam visualizar a aplicação online, bastam acessar o link **[AQUI](https://calculadora-frete.elielmaia.dev/)**.
+Caso desejam visualizar a aplicação online, bastam acessar o link **[AQUI](https://maia-transport.elielmaia.dev/)**.
